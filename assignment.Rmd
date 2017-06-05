@@ -1,5 +1,5 @@
 ---
-title: "Statistical Inference Course Project Part 1"
+title: "R Markdown and Leaflet"
 author: "V"
 date: "6/4/2017"
 output:
@@ -27,7 +27,7 @@ df <- data.frame(
 )
 
 icon <- makeIcon(
-  iconUrl = 'www.google.com',
+  iconUrl = 'https://maxcdn.icons8.com/Share/icon/Operating_Systems//linux1600.png',
   iconWidth = 31*215/230, iconHeight = 31,
   iconAnchorX = 31*215/230/2, iconAnchorY = 16
 )
