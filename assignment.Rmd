@@ -1,0 +1,61 @@
+---
+title: "Statistical Inference Course Project Part 1"
+author: "V"
+date: "6/4/2017"
+output:
+  html_document: default
+  pdf_document: default
+---
+
+## Instructions
+
+Create a web page using R Markdown that features a map created with Leaflet.
+
+Host your webpage on either GitHub Pages, RPubs, or NeoCities.
+
+Your webpage must contain the date that you created the document, and it must contain a map created with Leaflet. We would love to see you show off your creativity!
+
+
+## Simulation
+
+```{r setup, include=TRUE, output=TRUE}
+set.seed(12321)
+library(leaflet)
+df <- data.frame(
+  lat = runif(20, min = 39.2, max = 39.3),
+  long = runif(20, min = -76.6, max = -76.5)
+)
+
+icon <- makeIcon(
+  iconUrl = 'www.google.com',
+  iconWidth = 31*215/230, iconHeight = 31,
+  iconAnchorX = 31*215/230/2, iconAnchorY = 16
+)
+
+popups <- c(
+  '<a href="www.google.com"> Link 1</a>',
+  '<a href="www.google.com"> Link 2</a>',
+  '<a href="www.google.com"> Link 3</a>',
+  '<a href="www.google.com"> Link 5</a>',
+  '<a href="www.google.com"> Link 6</a>',
+  '<a href="www.google.com"> Link 7</a>',
+  '<a href="www.google.com"> Link 8</a>',
+  '<a href="www.google.com"> Link 9</a>',
+  '<a href="www.google.com"> Link 10</a>',
+  '<a href="www.google.com"> Link 11</a>',
+  '<a href="www.google.com"> Link 12</a>',
+  '<a href="www.google.com"> Link 13>/a>',
+  '<a href="www.google.com"> Link 14</a>',
+  '<a href="www.google.com"> Link 15</a>',
+  '<a href="www.google.com"> Link 16</a>',
+  '<a href="www.google.com"> Link 17</a>',
+  '<a href="www.google.com"> Link 18</a>',
+  '<a href="www.google.com"> Link 19</a>',
+  '<a href="www.google.com"> Link 20</a>'
+)
+df %>%
+  leaflet() %>%
+  addTiles() %>%
+  addMarkers(icon = icon, popup = popups )
+```
+
